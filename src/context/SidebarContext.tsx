@@ -1,13 +1,9 @@
 import React, { useState, useMemo, PropsWithChildren } from "react";
 
 // create context
-export const SidebarContext = React.createContext({
-  isSidebarOpen: false,
-  toggleSidebar: () => console.log(1),
-  closeSidebar: () => console.log(1),
-});
+export const SidebarContext = React.createContext<any>(null);
 
-export const SidebarProvider = ({ children }: PropsWithChildren) => {
+export const SidebarProvider = ({ children }: PropsWithChildren<{}>) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   function toggleSidebar() {

@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 import { DropdownIcon } from "../../icons";
 import * as Icons from "../../icons";
 import { Transition } from "@windmill/react-ui";
+import { IconName, IconProps } from "../../types/app";
 
-interface IconProps {
-  icon: string;
-  className?: string;
-}
 function Icon({ icon, ...props }: IconProps) {
   const Icon = Icons[icon];
   return <Icon {...props} />;
@@ -40,7 +37,11 @@ function SidebarSubmenu({
         aria-haspopup="true"
       >
         <span className="inline-flex items-center">
-          <Icon className="w-5 h-5" aria-hidden="true" icon={route.icon} />
+          <Icon
+            className="w-5 h-5"
+            aria-hidden="true"
+            icon={route.icon as IconName}
+          />
           <span className="ml-4">{route.name}</span>
         </span>
         <DropdownIcon className="w-4 h-4" aria-hidden="true" />

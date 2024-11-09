@@ -12,11 +12,11 @@ import React, {
  * @param {string} theme - Name of curent theme
  * @return {string} previousTheme
  */
-function usePrevious(theme) {
-  const ref = useRef();
+function usePrevious<T>(value: T): T | undefined {
+  const ref = useRef<T>();
   useEffect(() => {
-    ref.current = theme;
-  });
+    ref.current = value;
+  }, [value]);
   return ref.current;
 }
 
@@ -25,29 +25,37 @@ function usePrevious(theme) {
  * @param {string} key - localStorage key
  * @return {array} getter and setter for user preferred theme
  */
-function useStorageTheme(key) {
+function useStorageTheme(
+  key: string
+): [string, React.Dispatch<React.SetStateAction<string>>] {
   const userPreference =
-    !!window.matchMedia &&
+    typeof window !== "undefined" &&
+    window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  const [theme, setTheme] = useState(
+  const [theme, setTheme] = useState<string>(
     // use stored theme; fallback to user preference
-    localStorage.getItem(key) || userPreference
+    localStorage.getItem(key) || (userPreference ? "dark" : "light")
   );
 
   // update stored theme
   useEffect(() => {
-    localStorage.setItem(key, theme);
+    if (theme) {
+      localStorage.setItem(key, theme);
+    }
   }, [theme, key]);
 
   return [theme, setTheme];
 }
 
 // create context
-export const ThemeContext = React.createContext();
+export const ThemeContext = React.createContext<{
+  theme: string;
+  toggleTheme: () => void;
+} | null>(null);
 
 // create context provider
-export const ThemeProvider = ({ children }: PropsWithChildren) => {
+export const ThemeProvider = ({ children }: PropsWithChildren<{}>) => {
   const [theme, setTheme] = useStorageTheme("theme");
 
   // update root element class on theme change

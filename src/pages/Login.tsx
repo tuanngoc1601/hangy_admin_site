@@ -5,6 +5,10 @@ import ImageDark from "../assets/img/login-office-dark.jpeg";
 import { GithubIcon, TwitterIcon } from "../icons";
 import { Label, Input, Button } from "@windmill/react-ui";
 
+const CustomInput = Input as unknown as React.FC<
+  React.InputHTMLAttributes<HTMLInputElement>
+>;
+
 function Login() {
   return (
     <div className="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
@@ -31,7 +35,7 @@ function Login() {
               </h1>
               <Label>
                 <span>Email</span>
-                <Input
+                <CustomInput
                   className="mt-1"
                   type="email"
                   placeholder="john@doe.com"
@@ -40,16 +44,18 @@ function Login() {
 
               <Label className="mt-4">
                 <span>Password</span>
-                <Input
+                <CustomInput
                   className="mt-1"
                   type="password"
                   placeholder="***************"
                 />
               </Label>
 
-              <Button className="mt-4" block tag={Link} to="/app">
-                Log in
-              </Button>
+              <Link to={"/app"}>
+                <Button className="mt-4" block>
+                  Log in
+                </Button>
+              </Link>
 
               <hr className="my-8" />
 

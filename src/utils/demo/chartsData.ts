@@ -76,7 +76,7 @@ export const lineOptions = {
       intersect: false,
     },
     hover: {
-      mode: "nearest",
+      mode: "nearest" as "nearest", // Đảm bảo giá trị này khớp với kiểu mong đợi: "index" | "nearest" | "dataset" | "point" | "x" | "y"
       intersect: true,
     },
     scales: {

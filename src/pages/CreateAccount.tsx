@@ -5,6 +5,10 @@ import ImageDark from "../assets/img/create-account-office-dark.jpeg";
 import { GithubIcon, TwitterIcon } from "../icons";
 import { Input, Label, Button } from "@windmill/react-ui";
 
+const CustomInput = Input as unknown as React.FC<
+  React.InputHTMLAttributes<HTMLInputElement>
+>;
+
 function Login() {
   return (
     <div className="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
@@ -31,7 +35,7 @@ function Login() {
               </h1>
               <Label>
                 <span>Email</span>
-                <Input
+                <CustomInput
                   className="mt-1"
                   type="email"
                   placeholder="john@doe.com"
@@ -39,7 +43,7 @@ function Login() {
               </Label>
               <Label className="mt-4">
                 <span>Password</span>
-                <Input
+                <CustomInput
                   className="mt-1"
                   placeholder="***************"
                   type="password"
@@ -47,7 +51,7 @@ function Login() {
               </Label>
               <Label className="mt-4">
                 <span>Confirm password</span>
-                <Input
+                <CustomInput
                   className="mt-1"
                   placeholder="***************"
                   type="password"
@@ -55,16 +59,18 @@ function Login() {
               </Label>
 
               <Label className="mt-6" check>
-                <Input type="checkbox" />
+                <CustomInput type="checkbox" />
                 <span className="ml-2">
                   I agree to the{" "}
                   <span className="underline">privacy policy</span>
                 </span>
               </Label>
 
-              <Button tag={Link} to="/login" block className="mt-4">
-                Create account
-              </Button>
+              <Link to={"/login"}>
+                <Button block className="mt-4">
+                  Create account
+                </Button>
+              </Link>
 
               <hr className="my-8" />
 

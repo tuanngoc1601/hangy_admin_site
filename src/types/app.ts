@@ -1,3 +1,11 @@
+import * as Icons from "../icons";
+
+export type IconName = keyof typeof Icons;
+
+export interface IconProps extends React.SVGProps<SVGSVGElement> {
+  icon: IconName;
+}
+
 export interface Message {
   flag: string;
   text: string;

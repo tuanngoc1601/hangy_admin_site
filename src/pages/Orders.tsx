@@ -1,12 +1,13 @@
 import { useState } from "react";
 import PageTitle from "../components/Typography/PageTitle";
 import { NavLink } from "react-router-dom";
-import { HomeIcon } from "../icons";
 import { Card, CardBody, Label, Select } from "@windmill/react-ui";
 import OrdersTable from "../components/OrdersTable";
+import { IconName, IconProps } from "../types/app";
+import * as Icons from "../icons";
 
-function Icon({ icon, ...props }) {
-  const Icon = icon;
+function Icon({ icon, ...props }: IconProps) {
+  const Icon = Icons[icon];
   return <Icon {...props} />;
 }
 
@@ -38,7 +39,11 @@ const Orders = () => {
       {/* Breadcum */}
       <div className="flex text-gray-800 dark:text-gray-300">
         <div className="flex items-center text-purple-600">
-          <Icon className="w-5 h-5" aria-hidden="true" icon={HomeIcon} />
+          <Icon
+            className="w-5 h-5"
+            aria-hidden="true"
+            icon={"HomeIcon" as IconName}
+          />
           <NavLink to="/app/dashboard" className="mx-2">
             Dashboard
           </NavLink>
@@ -57,6 +62,11 @@ const Orders = () => {
 
             <Label className="mx-3">
               <Select
+                placeholder="Status"
+                onPointerEnterCapture={() => console.log("Pointer entered")}
+                onPointerLeaveCapture={() => console.log("Pointer left")}
+                css={{ borderColor: "gray" }} // Đảm bảo sử dụng đúng kiểu css nếu thư viện yêu cầu
+                required
                 className="py-3"
                 onChange={(e) => handleFilter(e.target.value)}
               >

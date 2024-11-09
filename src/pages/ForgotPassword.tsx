@@ -4,6 +4,10 @@ import ImageLight from "../assets/img/forgot-password-office.jpeg";
 import ImageDark from "../assets/img/forgot-password-office-dark.jpeg";
 import { Label, Input, Button } from "@windmill/react-ui";
 
+const CustomInput = Input as unknown as React.FC<
+  React.InputHTMLAttributes<HTMLInputElement>
+>;
+
 function ForgotPassword() {
   return (
     <div className="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
@@ -31,12 +35,14 @@ function ForgotPassword() {
 
               <Label>
                 <span>Email</span>
-                <Input className="mt-1" placeholder="Jane Doe" />
+                <CustomInput className="mt-1" placeholder="Jane Doe" />
               </Label>
 
-              <Button tag={Link} to="/login" block className="mt-4">
-                Recover password
-              </Button>
+              <Link to={"/login"}>
+                <Button block className="mt-4">
+                  Recover password
+                </Button>
+              </Link>
             </div>
           </main>
         </div>

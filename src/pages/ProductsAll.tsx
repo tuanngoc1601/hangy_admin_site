@@ -108,7 +108,14 @@ const ProductsAll = () => {
               </p>
 
               <Label className="mx-3">
-                <Select className="py-3">
+                <Select
+                  className="py-3"
+                  placeholder="Status"
+                  onPointerEnterCapture={() => console.log("Pointer entered")}
+                  onPointerLeaveCapture={() => console.log("Pointer left")}
+                  css={{ borderColor: "gray" }} // Đảm bảo sử dụng đúng kiểu css nếu thư viện yêu cầu
+                  required
+                >
                   <option>Sort by</option>
                   <option>Asc</option>
                   <option>Desc</option>
@@ -116,7 +123,14 @@ const ProductsAll = () => {
               </Label>
 
               <Label className="mx-3">
-                <Select className="py-3">
+                <Select
+                  className="py-3"
+                  placeholder="Status"
+                  onPointerEnterCapture={() => console.log("Pointer entered")}
+                  onPointerLeaveCapture={() => console.log("Pointer left")}
+                  css={{ borderColor: "gray" }} // Đảm bảo sử dụng đúng kiểu css nếu thư viện yêu cầu
+                  required
+                >
                   <option>Filter by Category</option>
                   <option>Electronics</option>
                   <option>Cloths</option>
@@ -142,7 +156,13 @@ const ProductsAll = () => {
             </div>
             <div className="">
               <Button
-                icon={view === "list" ? ListViewIcon : GridViewIcon}
+                icon={(props) =>
+                  view === "list" ? (
+                    <ListViewIcon {...props} />
+                  ) : (
+                    <GridViewIcon {...props} />
+                  )
+                }
                 className="p-2"
                 aria-label="Edit"
                 onClick={handleChangeView}
@@ -235,19 +255,19 @@ const ProductsAll = () => {
                       <div className="flex">
                         <Link to={`/app/product/${product.id}`}>
                           <Button
-                            icon={EyeIcon}
+                            icon={(props) => <EyeIcon {...props} />}
                             className="mr-3"
                             aria-label="Preview"
                           />
                         </Link>
                         <Button
-                          icon={EditIcon}
+                          icon={(props) => <EditIcon {...props} />}
                           className="mr-3"
                           layout="outline"
                           aria-label="Edit"
                         />
                         <Button
-                          icon={TrashIcon}
+                          icon={(props) => <TrashIcon {...props} />}
                           layout="outline"
                           onClick={() => openModal(product.id)}
                           aria-label="Delete"
@@ -307,7 +327,7 @@ const ProductsAll = () => {
                       <div>
                         <Link to={`/app/product/${product.id}`}>
                           <Button
-                            icon={EyeIcon}
+                            icon={(props) => <EyeIcon {...props} />}
                             className="mr-3"
                             aria-label="Preview"
                             size="small"
@@ -316,14 +336,14 @@ const ProductsAll = () => {
                       </div>
                       <div>
                         <Button
-                          icon={EditIcon}
+                          icon={(props) => <EditIcon {...props} />}
                           className="mr-3"
                           layout="outline"
                           aria-label="Edit"
                           size="small"
                         />
                         <Button
-                          icon={TrashIcon}
+                          icon={(props) => <TrashIcon {...props} />}
                           layout="outline"
                           aria-label="Delete"
                           onClick={() => openModal(product.id)}

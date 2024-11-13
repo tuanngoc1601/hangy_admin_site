@@ -1,5 +1,5 @@
 import routes from "../../routes/sidebar";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import * as Icons from "../../icons";
 import SidebarSubmenu from "./SidebarSubmenu";
 import { Button } from "@windmill/react-ui";
@@ -13,12 +13,12 @@ function Icon({ icon, ...props }: IconProps) {
 function SidebarContent() {
   return (
     <div className="py-4 text-gray-500 dark:text-gray-400">
-      <a
+      <Link
         className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
-        href="#"
+        to={"/app/dashboard"}
       >
         E-Commerce
-      </a>
+      </Link>
       <ul className="mt-6">
         {routes.slice(0, -3).map((route) =>
           route.routes ? (

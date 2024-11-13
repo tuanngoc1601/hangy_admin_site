@@ -58,7 +58,7 @@ const AddProduct = () => {
             <FormTitle>Product Name</FormTitle>
             <Label>
               <CustomInput
-                className="mb-4"
+                className="mb-4 px-4 py-2"
                 placeholder="Type product name here"
               />
             </Label>
@@ -66,7 +66,7 @@ const AddProduct = () => {
             <FormTitle>Product Price</FormTitle>
             <Label>
               <CustomInput
-                className="mb-4"
+                className="mb-4  px-4 py-2"
                 placeholder="Enter product price here"
               />
             </Label>
@@ -74,7 +74,7 @@ const AddProduct = () => {
             <FormTitle>Short description</FormTitle>
             <Label>
               <Textarea
-                className="mb-4"
+                className="mb-4  px-4 py-2"
                 rows={3}
                 placeholder="Enter product short description here"
                 aria-label="Text area"
@@ -87,7 +87,7 @@ const AddProduct = () => {
             <FormTitle>Stock Qunatity</FormTitle>
             <Label>
               <CustomInput
-                className="mb-4"
+                className="mb-4  px-4 py-2"
                 placeholder="Enter product stock quantity"
               />
             </Label>
@@ -95,7 +95,7 @@ const AddProduct = () => {
             <FormTitle>Full description</FormTitle>
             <Label>
               <Textarea
-                className="mb-4"
+                className="mb-4  px-4 py-2"
                 rows={5}
                 placeholder="Enter product full description here"
                 aria-label="Text area"
@@ -106,7 +106,7 @@ const AddProduct = () => {
             </Label>
 
             <div className="w-full">
-              <Button size="large" iconLeft={(props) => <AddIcon {...props} />}>
+              <Button size="large" iconLeft={(props) => <AddIcon {...props} />} className="px-4 py-2">
                 Add Product
               </Button>
             </div>
@@ -133,7 +133,7 @@ const AddProduct = () => {
             <Label className="mt-4">
               <FormTitle>Select Product Category</FormTitle>
               <Select
-                className="mt-1"
+                className="mt-1 px-4 py-2"
                 placeholder="Category"
                 onPointerEnterCapture={() => console.log("Pointer entered")}
                 onPointerLeaveCapture={() => console.log("Pointer left")}

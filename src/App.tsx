@@ -27,7 +27,6 @@ function App() {
           {/* Nếu bạn có trang index, bạn có thể giữ Navigate thay cho Redirect */}
           <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
-        <h1 className="text-red-500 text-xl">Hangy-site Admin</h1>
       </Router>
     </>
   );

@@ -109,7 +109,7 @@ const ProductsAll = () => {
 
               <Label className="mx-3">
                 <Select
-                  className="py-3"
+                  className="py-3 px-2"
                   placeholder="Status"
                   onPointerEnterCapture={() => console.log("Pointer entered")}
                   onPointerLeaveCapture={() => console.log("Pointer left")}
@@ -124,7 +124,7 @@ const ProductsAll = () => {
 
               <Label className="mx-3">
                 <Select
-                  className="py-3"
+                  className="py-3 px-2"
                   placeholder="Status"
                   onPointerEnterCapture={() => console.log("Pointer entered")}
                   onPointerLeaveCapture={() => console.log("Pointer left")}
@@ -142,7 +142,7 @@ const ProductsAll = () => {
                 {/* <!-- focus-within sets the color for the icon when input is focused --> */}
                 <div className="relative text-gray-500 focus-within:text-purple-600 dark:focus-within:text-purple-400">
                   <input
-                    className="py-3 pr-5 text-sm text-black dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-input"
+                    className="py-3 pl-2 pr-5 text-sm text-black dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-input"
                     placeholder="Number of Results"
                     value={resultsPerPage}
                     onChange={(e) => setResultsPerPage(Number(e.target.value))}

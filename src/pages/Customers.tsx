@@ -1,3 +1,5 @@
+import { Chart, registerables } from "chart.js";
+Chart.register(...registerables);
 import PageTitle from "../components/Typography/PageTitle";
 import ChartCard from "../components/Chart/ChartCard";
 import { Line, Bar } from "react-chartjs-2";

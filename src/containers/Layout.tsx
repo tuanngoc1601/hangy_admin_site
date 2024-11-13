@@ -35,7 +35,7 @@ function Layout() {
                 return route.component ? (
                   <Route
                     key={i}
-                    path={`/app${route.path}`}
+                    path={route.path}
                     element={<route.component />}
                   />
                 ) : null;

@@ -66,8 +66,7 @@ const Orders = () => {
                 onPointerEnterCapture={() => console.log("Pointer entered")}
                 onPointerLeaveCapture={() => console.log("Pointer left")}
                 css={{ borderColor: "gray" }} // Đảm bảo sử dụng đúng kiểu css nếu thư viện yêu cầu
-                required
-                className="py-3"
+                className="py-3 px-2"
                 onChange={(e) => handleFilter(e.target.value)}
               >
                 <option>All</option>
@@ -79,9 +78,9 @@ const Orders = () => {
 
             <Label className="">
               {/* <!-- focus-within sets the color for the icon when input is focused --> */}
-              <div className="relative text-gray-500 focus-within:text-purple-600 dark:focus-within:text-purple-400">
+              <div className="relative text-gray-500 focus-within:text-purple-600 dark:focus-within:text-purple-400 rounded-md">
                 <input
-                  className="py-3 pr-5 text-sm text-black dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-input"
+                  className="py-3 pr-5 ps-2 text-sm text-black dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-input"
                   value={resultsPerPage}
                   onChange={(e) => setResultPerPage(Number(e.target.value))}
                 />

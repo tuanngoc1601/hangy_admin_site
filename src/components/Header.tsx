@@ -58,7 +58,7 @@ function Header() {
               <SearchIcon className="w-4 h-4" aria-hidden="true" />
             </div>
             <CustomInput
-              className="pl-8 text-gray-700"
+              className="pl-8 h-10 text-gray-700"
               placeholder="Search for projects"
               aria-label="Search"
             />

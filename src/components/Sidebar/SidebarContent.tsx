@@ -88,7 +88,7 @@ function SidebarContent() {
       </ul>
 
       <div className="px-6 my-6">
-        <Button>
+        <Button className="py-2">
           Genarate Report
           <span className="ml-2" aria-hidden="true">
             +

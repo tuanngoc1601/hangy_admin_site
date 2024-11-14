@@ -36,7 +36,7 @@ function Login() {
               <Label>
                 <span>Email</span>
                 <CustomInput
-                  className="mt-1"
+                  className="mt-1 px-4 py-2"
                   type="email"
                   placeholder="john@doe.com"
                 />
@@ -45,9 +45,9 @@ function Login() {
               <Label className="mt-4">
                 <span>Password</span>
                 <CustomInput
-                  className="mt-1"
+                  className="mt-1 px-4 py-2"
                   type="password"
-                  placeholder="***************"
+                  placeholder="************"
                 />
               </Label>
 

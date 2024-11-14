@@ -130,7 +130,7 @@ function Header() {
               aria-haspopup="true"
             >
               <Avatar
-                className="align-middle"
+                className="align-middle w-8 h-8"
                 src={response.avatar}
                 alt=""
                 aria-hidden="true"
